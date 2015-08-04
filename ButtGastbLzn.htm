@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="Microsoft FrontPage 4.0">
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<TITLE></TITLE>
+<SCRIPT language="JavaScript">
+<!--HPB_SCRIPT_ROV_50
+//
+// Licensed Materials - Property of IBM
+// 5639-L89, 11K8359
+// (C) Copyright IBM Corp. 1995, 2000  All Rights Reserved.
+//
+// Version: 5.0.0
+//
+
+// HpbImgPreload:
+//
+function HpbImgPreload()
+{
+  var appVer=parseInt(navigator.appVersion);
+  var isNC=(document.layers && (appVer >= 4));
+  var isIE=(document.all    && (appVer >= 4));
+  if (isNC || isIE)
+  {
+    if (document.images)
+    {
+      var imgName = HpbImgPreload.arguments[0];
+      var cnt;
+      swImg[imgName] = new Array;
+      for (cnt = 1; cnt < HpbImgPreload.arguments.length; cnt++)
+      {
+        swImg[imgName][HpbImgPreload.arguments[cnt]] = new Image();
+        swImg[imgName][HpbImgPreload.arguments[cnt]].src = HpbImgPreload.arguments[cnt];
+      }
+    }
+  }
+}
+// HpbImgFind:
+//
+function HpbImgFind(doc, imgName)
+{
+  for (var i=0; i < doc.layers.length; i++)
+  {
+    var img = doc.layers[i].document.images[imgName];
+    if (!img) img = HpbImgFind(doc.layers[i], imgName);
+    if (img) return img;
+  }
+  return null;
+}
+// HpbImgSwap:
+//
+function HpbImgSwap(imgName, imgSrc)
+{
+  var appVer=parseInt(navigator.appVersion);
+  var isNC=(document.layers && (appVer >= 4));
+  var isIE=(document.all    && (appVer >= 4));
+  if (isNC || isIE)
+  {
+    if (document.images)
+    {
+      var img = document.images[imgName];
+      if (!img) img = HpbImgFind(document, imgName);
+      if (img) img.src = imgSrc;
+    }
+  }
+}
+var swImg; swImg=new Array;
+//-->
+</SCRIPT><SCRIPT language="JavaScript">
+<!--HPB_SCRIPT_PLD_50
+HpbImgPreload('_HPB_ROLLOVER16', 'img/ButtGastbLzn_n_image.jpg', 'img/ButtGastbLzn_m_image.jpg');
+//-->
+</SCRIPT></HEAD>
+<BODY>
+<P><A href="#" id="_HPB_ROLLOVER16" onmouseout="HpbImgSwap('_HPB_ROLLOVER16','img/ButtGastbLzn_n_image.jpg');" onmouseover="HpbImgSwap('_HPB_ROLLOVER16','img/ButtGastbLzn_m_image.jpg');"><IMG border="0" name="_HPB_ROLLOVER16" src="img/ButtGastbLzn_n_image.jpg" width="104" height="27"></A></P>
+</BODY>

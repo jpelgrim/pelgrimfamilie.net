@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252"><!-- saved from url=(0022)http://internet.e-mail -->
+<STYLE>BODY {
+	FONT-SIZE: 14pt; MARGIN-LEFT: 119px; COLOR: #772b04; MARGIN-RIGHT: 164px; FONT-FAMILY: "Comic Sans MS"; BACKGROUND-COLOR: #ffffff
+}
+</STYLE>
+
+<META content="MSHTML 5.50.4134.600" name=GENERATOR>
+<META content="MSHTML 5.00.2314.1000" name=GENERATOR>
+<META content="MSHTML 5.00.2314.1000" name=GENERATOR>
+<META content="MSHTML 5.00.2314.1000" name=GENERATOR>
+<META content="Microsoft FrontPage 4.0" name=GENERATOR><BGSOUND balance=0 
+src="img/lollipop2.mid" volume=0 loop=-1>
+<title></title>
+</HEAD>
+<BODY bgColor=#000000 background=img/BLOEME~1.JPG>
+<DIV>&nbsp;</DIV>
+<DIV><BR></DIV>
+<DIV><STRONG><FONT face=Arial color=#000000 size=3>Hallo 
+Jan.</FONT></STRONG></DIV>
+<DIV><STRONG><FONT face=Arial color=#000000 size=3>Namens mijn vrouw en 
+mij.</FONT></STRONG></DIV>
+<DIV><STRONG><FONT face=Arial color=#000000 size=3>Heel hartelijk gefeliciteerd 
+met je nieuwe kleindochter.</FONT></STRONG></DIV>
+<DIV><STRONG><FONT face=Arial color=#000000 size=3>Uiteraard ook de pa en ma en 
+haar beide broertjes.</FONT></STRONG></DIV>
+<DIV><STRONG><FONT face=Arial color=#000000 size=3>Leuke foto reportage op je 
+site....</FONT></STRONG></DIV>
+<DIV><STRONG><FONT face=Arial color=#000000 size=3>Wij hopen dat je er nog lang 
+en in gezondheid van zal mogen genieten.</FONT></STRONG></DIV>
+<DIV>&nbsp;</DIV>
+<DIV><FONT face=Arial color=#000000 size=3><STRONG>Groetjes Aad &amp; Riek 
+Rom<BR></STRONG><A href="mailto:arom2@chello.nl">arom2@chello.nl</A><BR><A 
+href="http://members.rott.chello.nl/arom2">http://members.rott.chello.nl/arom2</A></FONT></DIV>
+<DIV>&nbsp;</DIV>
+<DIV><FONT face=Arial size=2><BR></FONT></DIV>
+<DIV><BR></DIV>
+<DIV>&nbsp;</DIV><IMG id=bkg1 
+style="LEFT: -1800px; WIDTH: 150px; POSITION: absolute; TOP: 0px; HEIGHT: 246px" 
+src="img/Plaatje1.gif" width="150" height="246"> <IMG id=bkg2 
+style="LEFT: -1800px; WIDTH: 164px; POSITION: absolute; TOP: 0px; HEIGHT: 227px" 
+src="img/Plaatje2.gif" width="164" height="227">
+<SCRIPT language=VBScript>
+REM *** LEFT-BORDER SCROLL SCRIPT ***
+REM Edgar V. Poirier
+REM moomoo@nbnet.nb.ca
+REM Thanks to Tar'Hom for the idea ; )
+REM Revised August 21, 1999
+Dim w, wW, wH, sH, wx, bH, myTimer, Res, borders
+Dim  pW(2), pH(2), y(2), yD(2), numPics(2), chkPics(2)
+Set w=document.body
+
+REM *******************************
+REM * Set Scroll Direction Below  *
+REM * For Scroll-Down (yD(1)=1)   *
+REM * For Scroll-Up (yD(1)=-1)    *
+REM *******************************
+
+REM Left border
+yD(1)=1
+REM Right border
+yD(2)=-1
+
+REM * Number of scrolling borders *
+borders=2
+
+REM Initialize
+sub setUp()
+on error resume next
+	REM Set margins
+	w.style.marginLeft=pW(1)
+	w.style.marginRight=pW(2)
+	REM Get window dimensions
+	wW=w.clientWidth
+	wH=w.offsetHeight
+	REM Repeat to fix an OE bug
+	wW=w.clientWidth
+	wH=w.offsetHeight
+	sH=w.scrollHeight
+	REM Set the scroll Height
+	bH=wH
+	if sH>wH then bH=sH
+	for i=1 to borders
+		y(i)=-(pH(i))
+		chkPics(i)=numPics(i)
+		REM Adjust number of pics for message length
+		if int(bH/pH(i))>numPics(i) then
+			chkPics(i)=int(bH/pH(i))+4
+			data=""
+			for j=numPics(i)+1 to chkPics(i)
+				data=data&"<IMG src='"&document.all("bkg"&i).src&"'>"
+			next
+			document.all("box"&i).insertAdjacentHTML "BeforeEnd", data
+		end if
+		REM Limit visible area
+		document.all("container"&i).style.width=pW(i)
+		document.all("container"&i).style.height=bH
+		if i=1 then
+			document.all("container"&i).style.left=0
+		else
+			document.all("container"&i).style.left=wW-pW(i)
+		end if
+		document.all("container"&i).style.top=0
+		REM Set the size of the scrolling area
+		document.all("box"&i).style.height=bH+3*pH(i)
+		document.all("box"&i).style.width=pW(i)
+		document.all("box"&i).style.left=0
+		document.all("box"&i).style.top=-y(i)
+	next
+	REM Start the scroll.
+	SF
+end sub
+
+REM Actual scrolling routine.
+sub SF()
+	ClearTimeOut(myTimer)
+	for i=1 to borders
+		y(i)=y(i)+yD(i)
+	 	if yD(i)>0 and y(i)>=0 then y(i)=-(pH(i))
+		if yD(i)<0 and y(i)<-(pH(i)) then y(i)=0
+		REM Position the background image.
+		document.all("box"&i).style.top = y(i)
+		REM *** repeat (larger numbers in line below give slower scroll) ***
+	next
+	myTimer=SetTimeOut("SF",24)
+end sub
+
+REM Everything starts here
+sub Window_OnLoad()
+	REM Get window dimensions
+	wW=w.clientWidth
+	wH=w.offsetHeight
+	REM Repeat to fix an OE bug
+	wW=w.clientWidth
+	wH=w.offsetHeight
+	REM Get users screen resolution
+	wx=window.screen.width
+	REM and adjust font size to match.
+	Res=INT(wx/128)
+	w.style.fontSize = 14+Res
+	for i=1 to borders
+		REM Get dimensions of background image.
+		pW(i)=document.all("bkg"&i).style.posWidth
+		pH(i)=document.all("bkg"&i).style.posHeight
+		REM Number of images down
+		numPics(i)=INT((wx*.75)/pH(i))+4
+		if w.scrollHeight>wH then
+			hc=w.scrollHeight/pH(i)
+			if int(hc)<hc then 
+				numPics(i)=int(hc)+4
+			else
+				numPics(i)=int(hc)+4
+			end if
+		end if
+		REM "Tile" the background (NOTE: Image is not positioned.)
+		for j=1 to numPics(i)
+			data=""
+			data="<IMG src='" & document.all("bkg"&i).src & "'>"
+			document.all("box"&i).insertAdjacentHTML "beforeEnd", data
+		next
+	next
+	REM Lets get started.
+	setUp
+end sub
+
+REM This runs if the window size is changed.
+sub Window_OnResize()
+	setUp
+end sub
+
+</SCRIPT>
+ <!-- This is the "fake" left-border background made up of a SPAN inside a DIV - DO NOT CHANGE OR MOVE THE FOLLOWING -->
+<DIV id=container1 
+style="FILTER: BlendTrans(Duration=0); LEFT: -1800px; WIDTH: 800px; POSITION: absolute; TOP: 0px; HEIGHT: 600px"><SPAN 
+id=box1 style="WIDTH: 600px; POSITION: absolute; HEIGHT: 800px"></SPAN></DIV><!-- This is the "fake" right-border background made up of a SPAN inside a DIV - DO NOT CHANGE OR MOVE THE FOLLOWING -->
+<DIV id=container2 
+style="FILTER: BlendTrans(Duration=0); LEFT: -1800px; WIDTH: 800px; POSITION: absolute; TOP: 0px; HEIGHT: 600px"><SPAN 
+id=box2 
+style="WIDTH: 600px; POSITION: absolute; HEIGHT: 800px"></SPAN></DIV><FONT 
+face="SignPainter HouseScript"><FONT size=6><FONT color=#ff0000>
+<SCRIPT language=JavaScript>
+<!--
+ScrollSpeed = 275; // milliseconds between scrolls
+ScrollChars = 4; // chars scrolled per time period
+
+function SetupTicker() {
+// add space to the left of the message
+msg = "Groetjes Aad       ";
+RunTicker();}
+
+function RunTicker() {
+window.setTimeout('RunTicker()',ScrollSpeed);
+window.status = msg;
+msg = msg.substring(ScrollChars) + msg.substring(0,ScrollChars);}
+SetupTicker();
+
+<!-- end -->
+</SCRIPT>
+<!--VERMEER bot=HTMLMarkup startspan --><!--VERMEER bot=HTMLMarkup endspan --></FONT></FONT></FONT></BODY></HTML>

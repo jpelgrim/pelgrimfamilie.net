@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252"><STYLE type=text/css>BODY {
+	MARGIN-TOP: 10px; FONT-WEIGHT: normal; FONT-SIZE: 12pt; MARGIN-LEFT: 250px; COLOR: #000000; MARGIN-RIGHT: 5px; SCROLLBAR-ARROW-COLOR: #000000; SCROLLBAR-TRACK-COLOR: #6d8c49; FONT-FAMILY: Comic Sans MS; SCROLLBAR-BASE-COLOR: #f0d780; BACKGROUND-COLOR: #ffffff
+}
+</STYLE>
+
+<META content="Microsoft FrontPage 4.0" name=GENERATOR>
+<title></title>
+</HEAD>
+<BODY bgColor=#ffffff background=img/achtercasey.jpg>
+<DIV><FONT face=Arial></FONT>&nbsp;</DIV>
+<DIV><BR></DIV>
+<DIV><FONT size=6>Hallo Jan, van harte geluk gewenst met je nieuwe 
+kleindochter!!!</FONT></DIV>
+<DIV><FONT size=6></FONT>&nbsp;</DIV>
+<DIV><FONT size=6>Alle goeds samen met Floortje Naomi.</FONT></DIV>
+<DIV><FONT size=6></FONT>&nbsp;</DIV>
+<DIV><FONT size=6></FONT>&nbsp;</DIV>
+<DIV><FONT size=6>groet berty</FONT></DIV>
+<DIV id=imageholder 
+style="DISPLAY: none; Z-INDEX: -1; LEFT: 0px; POSITION: absolute; TOP: 0px"><IMG 
+id=tempImage style="DISPLAY: none" 
+src="img/casey.jpg" width="184" height="684">
+<SCRIPT language=VBScript>
+dim x
+x=0
+y=0
+
+for w=0 to 9
+        document.write "<img id=pics"&w&" src><br>"
+next
+
+imageholder.style.display="block"
+
+pics0.src=tempImage.src
+pics1.src=tempImage.src
+pics2.src=tempImage.src
+pics3.src=tempImage.src
+pics4.src=tempImage.src
+pics5.src=tempImage.src
+pics6.src=tempImage.src
+pics7.src=tempImage.src
+pics8.src=tempImage.src
+pics9.src=tempImage.src
+
+sub scroll() 
+        if y=1 then
+                exit sub
+        end if
+        if  x < pics0.height then
+                setTimeout "move", 1 
+        else 
+                x=0
+                setTimeout "move", 1 
+        end if	
+end sub
+
+sub move()
+                imageholder.style.top=-x	
+                x=x+1
+                setTimeout "scroll", 1 
+end sub
+
+sub imageholder_onclick()
+        if y=0 then
+                y=1
+        elseif y=1 then
+                y=0
+        end if
+        scroll()
+end sub
+
+scroll()
+
+</SCRIPT>
+ </DIV>
+<SCRIPT language=javascript>
+<!--
+var i=0;
+var msg="";
+var m1="   **** Alle goeds gewenst,                     ";
+var m2="          voor de toekomst van dit nieuwe leven!                     ";
+var m3="               liefs Berty                    ";
+function playtext()
+{
+setTimeout("playtext()",250);
+window.status=msg.substring(i,msg.length)+msg.substring(0, i)
+if(i++==msg.length)i=0;
+}
+msg=m1+m2+m3;
+playtext();
+//-->
+</SCRIPT>
+</BODY></HTML>
