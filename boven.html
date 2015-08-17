@@ -82,15 +82,14 @@ A:HOVER {text-decoration: underline;}
   <td valign="top">
       <form>
   <p align="left">&nbsp; <select name="list" onchange="showpage(this.form);" size="1">
- <option value="/CatOnderwerp.htm">Div.Informatie</option>
- <option value="/hoofdpag4.html">Diverse LINKS</option>
- <option value="/hoofdpag3.html">FOTO... Nieuw/Oud</option>
- <option value="Pelgrimfamilie.hyves.nl">Pelgrim@Hyves</option>
- <option value="/Kinderdijk.htm">Kinderdijk</option>
- <option value="www.seniorweb.nl/">SeniorWeb</option>
- <option value="mailgroep.seniorweb.nl/gen/">SW-Genealogie
- <option value="www.nederland.fm/">Nederland.FM</option>
- <option value="/index.html">HOME</option>
+ <option value="http://www.pelgrimfamilie.net/CatOnderwerp.htm">Div.Informatie</option>
+ <option value="http://www.pelgrimfamilie.net/hoofdpag4.html">Diverse LINKS</option>
+ <option value="http://www.pelgrimfamilie.net/hoofdpag3.html">FOTO... Nieuw/Oud</option>
+ <option value="http://www.pelgrimfamilie.net/Kinderdijk.htm">Kinderdijk</option>
+ <option value="http://www.seniorweb.nl/">SeniorWeb</option>
+ <option value="http://www.pelgrimfamilie.net/mailgroep.seniorweb.nl/gen/">SW-Genealogie
+ <option value="http://www.nederland.fm/">Nederland.FM</option>
+ <option value="http://www.pelgrimfamilie.net/index.html">HOME</option>
 </select><input type="button" value="Go" onclick="showpage(this.form);"></p>
 </form>
 <Script LANGUAGE="JavaScript">
@@ -98,7 +97,7 @@ A:HOVER {text-decoration: underline;}
   { var item = form.list.selectedIndex;
     choice = form.list.options[item].value;
     if (choice!="x")
-     top.location.href="http://"+(choice);
+     top.location.href=choice;
   };
 </script>
 </td>
