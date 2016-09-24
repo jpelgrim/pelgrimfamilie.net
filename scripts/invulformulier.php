@@ -35,7 +35,7 @@
 if (isset($_REQUEST['achternaam']) && isset($_REQUEST['voornamen']) && isset($_REQUEST['geboortedatum']) && isset($_REQUEST['plaats']))  {
   //send email
   $from = "info@codestone.nl";
-  $to = "jan@pelgrimfamilie.net";
+  $to = "pelgrim.jan@gmail.com";
   $subject = "Invulformulier - " . $_REQUEST['achternaam'] . ", " . $_REQUEST['voornamen'];
 
   $message .= "\nAchternaam: " . $_REQUEST['achternaam'];
